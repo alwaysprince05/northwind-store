@@ -9,9 +9,10 @@ app_port: 7860
 
 # 🛒 Northwind Store - E-Commerce Platform 🚀
 
-A modern, full-stack E-Commerce application built to provide a seamless shopping experience. 
+**Live Demo:** [https://huggingface.co/spaces/alwaysprince05e/northwind-store](https://huggingface.co/spaces/alwaysprince05e/northwind-store)
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
+A modern, full-stack E-Commerce application built to provide a seamless shopping experience. 
+This project is a high-performance storefront featuring a sleek UI, real-time catalog management, and secure authentication.
 
 ---
 
