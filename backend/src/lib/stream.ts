@@ -14,7 +14,7 @@ export function streamChatDisplayName(
 }
 
 export function getStreamChatServer(env: Env) {
-  return StreamChat.getInstance(env.STREAM_API_KEY, env.STREAM_API_SECRET);
+  return StreamChat.getInstance(env.STREAM_API_KEY || "", env.STREAM_API_SECRET || "");
 }
 
 export function streamUserId(clerkUserId: string) {
