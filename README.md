@@ -7,114 +7,118 @@ sdk: docker
 app_port: 7860
 ---
 
-# 🛒 Northwind Store - E-Commerce Platform 🚀
+# 🛒 Northwind Store - Premium E-Commerce Monolith
 
-**Live Demo:** [https://huggingface.co/spaces/alwaysprince05e/northwind-store](https://huggingface.co/spaces/alwaysprince05e/northwind-store)
+[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/alwaysprince05e/northwind-store)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/alwaysprince05/northwind-store)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-A modern, full-stack E-Commerce application built to provide a seamless shopping experience. 
-This project is a high-performance storefront featuring a sleek UI, real-time catalog management, and secure authentication.
-
----
-
-## ✨ Features
-
-- **Full Stack Architecture**: Built from scratch using the robust PERN stack (PostgreSQL, Express.js, React, Node.js).
-- **Modern Frontend**: Developed with React, TanStack Query, Tailwind CSS, and DaisyUI for a beautiful, responsive user interface.
-- **Secure Authentication**: Integrated with Clerk for robust, hassle-free user authentication and management.
-- **Robust Database**: Utilizing PostgreSQL hosted on Neon, with safe and scalable data models.
-- **Payments Integration**: Fully functional checkout and payment processing via Polar.
-- **Comprehensive Management**: Full management features for Products, Carts, and Orders.
-- **Admin Dashboard**: Dedicated admin interface to monitor and manage store products.
-- **Real-time Communication**: 
-  - Customer support chat powered by Stream.
-  - Video calling support.
-  - Real-time typing indicators and message reactions.
-  - Threaded conversations and file/GIF upload support.
-- **Optimized Media**: Image uploads and optimization handled by ImageKit.
-- **Monitoring & Analytics**: Application monitoring, error tracking, and performance analysis via Sentry.
-- **Webhooks**: Real-time event handling using webhooks for Clerk and Polar integrations.
+**Northwind Store** is an industry-grade, full-stack e-commerce platform designed for performance, scalability, and a premium user experience. Built using the **PERN stack** (PostgreSQL, Express, React, Node.js), it integrates modern tools like Clerk for authentication, TanStack Query for state management, and Drizzle ORM for database excellence.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Live Deployment
+
+The application is fully deployed and can be accessed here:
+👉 **[View Live Demo](https://huggingface.co/spaces/alwaysprince05e/northwind-store)**
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **React 18** (Vite)
+- **TanStack Query** (Data Fetching)
+- **Tailwind CSS & DaisyUI** (Premium Styling)
+- **Clerk** (Authentication)
+- **Lucide React** (Icons)
+
+### Backend
+- **Node.js & Express**
+- **Drizzle ORM** (Type-safe SQL)
+- **PostgreSQL** (Neon Serverless)
+- **Zod** (Schema Validation)
+- **Sentry** (Error Tracking)
+
+### Infrastructure & DevOps
+- **Docker** (Containerization)
+- **Hugging Face Spaces** (Cloud Hosting)
+- **Git LFS** (Binary Asset Management)
+
+---
+
+## ✨ Key Features
+
+- 🔐 **Secure Auth**: Seamless login/signup with Clerk.
+- 📦 **Dynamic Catalog**: Real-time product listing and category filtering.
+- 🛒 **Advanced Cart**: Persistent shopping cart with real-time updates.
+- 💳 **Checkout Flow**: Fully integrated checkout process.
+- 📱 **Fully Responsive**: Optimized for Mobile, Tablet, and Desktop.
+- ⚡ **Optimized Performance**: Server-side validation and efficient client-side caching.
+
+---
+
+## ⚙️ Local Development
 
 ### Prerequisites
 - Node.js (v18+)
-- PostgreSQL Database (Neon recommended)
-- API Keys for Clerk, Stream, ImageKit, Polar, and Sentry.
-
-### 🧪 Environment Variables
-
-To run this project locally, you will need to add the following environment variables to your `.env` files in both the frontend and backend directories.
-
-#### Backend (`/backend/.env`)
-
-```bash
-PORT=5000
-NODE_ENV=development
-
-DATABASE_URL=<your_postgresql_connection_string>
-
-CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
-CLERK_SECRET_KEY=<your_clerk_secret_key>
-CLERK_WEBHOOK_SECRET=<your_clerk_webhook_secret>
-
-SENTRY_DSN=<your_sentry_dsn>
-
-STREAM_API_KEY=<your_stream_api_key>
-STREAM_API_SECRET=<your_stream_api_secret>
-
-IMAGEKIT_PUBLIC_KEY=<your_imagekit_public_key>
-IMAGEKIT_PRIVATE_KEY=<your_imagekit_private_key>
-IMAGEKIT_URL_ENDPOINT=<your_imagekit_url_endpoint>
-
-FRONTEND_URL=http://localhost:5173
-
-POLAR_ACCESS_TOKEN=<your_polar_access_token>
-POLAR_WEBHOOK_SECRET=<your_polar_webhook_secret>
-POLAR_API_BASE=<your_polar_api_base_url>
-
-POLAR_CHECKOUT_PRODUCT_ID=<your_product_id>
-```
-
-#### Frontend (`/frontend/.env`)
-
-```bash
-VITE_CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
-VITE_SENTRY_DSN=<your_sentry_dsn>
-VITE_API_URL=http://localhost:5000
-```
+- PostgreSQL Database (Neon.tech recommended)
+- Clerk API Keys
 
 ### Installation
 
-1. Clone the repository
+1. **Clone the repo:**
    ```bash
    git clone https://github.com/alwaysprince05/northwind-store.git
    cd northwind-store
    ```
 
-2. Install backend dependencies
+2. **Setup Environment Variables:**
+   Create `.env` files in both `backend/` and `frontend/` folders following the `.env.example` structure.
+
+3. **Install Dependencies:**
+   ```bash
+   # Backend
+   cd backend && npm install
+   # Frontend
+   cd ../frontend && npm install
+   ```
+
+4. **Initialize Database:**
    ```bash
    cd backend
-   npm install
+   npm run db:push
+   npm run db:seed
    ```
 
-3. Install frontend dependencies
+5. **Start Development Servers:**
    ```bash
-   cd ../frontend
-   npm install
+   # In backend/
+   npm run dev
+   # In frontend/
+   npm run dev
    ```
-
-4. Start the development servers
-   - Backend: `npm run dev` in the `/backend` directory.
-   - Frontend: `npm run dev` in the `/frontend` directory.
 
 ---
 
-## 🤝 Contributing
+## 🚢 Deployment (Hugging Face)
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/alwaysprince05/northwind-store/issues).
+This project is optimized for deployment as a **Docker Monolith** on Hugging Face Spaces.
 
-## 📄 License
+1. Create a new **Docker Space**.
+2. Connect your GitHub repository.
+3. Add your secrets (`DATABASE_URL`, `CLERK_SECRET_KEY`, etc.) in Space Settings.
+4. Set `PORT` variable to `7860`.
 
-This project is licensed under the MIT License.
+---
+
+## 👤 Author
+
+**Prince Kumar Maurya**
+- GitHub: [@alwaysprince05](https://github.com/alwaysprince05)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
