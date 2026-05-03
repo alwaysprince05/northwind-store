@@ -4,11 +4,7 @@ import type { Env } from "./env.js";
 /** deletes an ImageKit file by `fileId` from our DB */
 export async function deleteImageKitAsset(env: Env, storedFileId: string | null) {
   if (!storedFileId) return;
-  const client = new ImageKit({
-    publicKey: env.IMAGEKIT_PUBLIC_KEY || "",
-    privateKey: env.IMAGEKIT_PRIVATE_KEY || "",
-    urlEndpoint: env.IMAGEKIT_URL_ENDPOINT || "",
-  });
+  const client = new ImageKit({ privateKey: env.IMAGEKIT_PRIVATE_KEY || "" });
   try {
     await client.files.delete(storedFileId);
   } catch (e: unknown) {
